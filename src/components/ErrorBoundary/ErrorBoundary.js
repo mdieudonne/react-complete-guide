@@ -4,14 +4,14 @@ class ErrorBoundary extends Component {
     state = {
         hasError: false,
         errorMessage: ''
-    }
+    };
 
     componentDidCatch = (error, info) => {
-        this.setSate({hasError: true, errorMessage: error});
-    }
+        this.setState({hasError: true, errorMessage: error});
+    };
 
     render() {
-        if (this.stage.hasError) {
+        if (this.state.hasError) {
             return <h1>{this.state.errorMessage}</h1>
         } else {
             return this.props.children;
